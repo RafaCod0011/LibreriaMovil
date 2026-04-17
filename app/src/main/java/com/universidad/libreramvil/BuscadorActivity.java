@@ -39,6 +39,7 @@ private ActivityBuscadorBinding b;
                 vm.buscarLibro(titulo);
             }
         });
+
         //Observamos el resultado del VM
         vm.getLibroBuscadoMutable().observe(this, new Observer<Libro>() {
                     @Override
