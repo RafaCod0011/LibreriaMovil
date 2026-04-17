@@ -1,8 +1,9 @@
 package com.universidad.libreramvil.modelo;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Libro {
+public class Libro implements Serializable {
 
     private int tapa;
     private String titulo;
@@ -31,7 +32,7 @@ public class Libro {
     }
 
     public Libro buscar(String tituloBusqueda) {
-        if (this.titulo != null && this.titulo.equals(tituloBusqueda)) {
+        if (this.titulo != null && this.titulo.equalsIgnoreCase(tituloBusqueda)) {
             return this;
         }
         return null;

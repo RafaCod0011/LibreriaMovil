@@ -1,4 +1,6 @@
 package com.universidad.libreramvil.repositorio;
+import android.util.Log;
+
 import com.universidad.libreramvil.modelo.Libro;
 
 import java.util.ArrayList;
@@ -11,6 +13,9 @@ public class LibroRepositorio {
     public LibroRepositorio() {
         this.listaLibros = new ArrayList<>();
         cargarLibros();
+        for (Libro nombre : listaLibros) {
+            Log.d("LISTA", nombre.getTitulo());
+        }
     }
 
     private void cargarLibros() {

@@ -1,5 +1,6 @@
 package com.universidad.libreramvil;
 import android.app.Application;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -15,13 +16,18 @@ public class BuscadorActivityViewModel extends AndroidViewModel {
     private MutableLiveData<Libro> libroBuscadoMutable;
     private LibroRepositorio repositorio;
 
+
+
     public BuscadorActivityViewModel(@NonNull Application application) {
         super(application);
         repositorio = new LibroRepositorio();
+        Log.d("LISTA", "Repositorio creado");
         libroBuscadoMutable = new MutableLiveData<>();
+
+
     }
 
-    public LiveData<Libro>getLibroEncontrado(){
+    public LiveData<Libro>getLibroBuscadoMutable(){
         return libroBuscadoMutable;
     }
 
