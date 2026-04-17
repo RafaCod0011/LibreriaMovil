@@ -11,6 +11,10 @@ import java.util.List;
 public class LibroRepositorio {
     private List<Libro> listaLibros;
 
+    public List<Libro> obtenerLibros() {
+        return listaLibros;
+    }
+
     public LibroRepositorio() {
         this.listaLibros = new ArrayList<>();
         cargarLibros();

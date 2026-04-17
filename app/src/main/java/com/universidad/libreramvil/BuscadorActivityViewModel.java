@@ -11,9 +11,12 @@ import androidx.lifecycle.ViewModel;
 import com.universidad.libreramvil.modelo.Libro;
 import com.universidad.libreramvil.repositorio.LibroRepositorio;
 
+import java.util.List;
+
 public class BuscadorActivityViewModel extends AndroidViewModel {
 
     private MutableLiveData<Libro> libroBuscadoMutable;
+    private MutableLiveData<List<Libro>> listaLibrosMutable;
     private LibroRepositorio repositorio;
 
 
@@ -24,11 +27,17 @@ public class BuscadorActivityViewModel extends AndroidViewModel {
         Log.d("LISTA", "Repositorio creado");
         libroBuscadoMutable = new MutableLiveData<>();
 
+        listaLibrosMutable = new MutableLiveData<>();
+        listaLibrosMutable.setValue(repositorio.obtenerLibros());
 
     }
 
     public LiveData<Libro>getLibroBuscadoMutable(){
         return libroBuscadoMutable;
+    }
+
+    public LiveData<List<Libro>> getListaLibros() {
+        return listaLibrosMutable;
     }
 
     public void buscarLibro(String titulo) {

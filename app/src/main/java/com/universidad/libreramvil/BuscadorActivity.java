@@ -8,6 +8,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 
 import com.universidad.libreramvil.databinding.ActivityBuscadorBinding;
@@ -29,6 +31,15 @@ private ActivityBuscadorBinding b;
         //queda inicializado el viewmodel
         vm = new ViewModelProvider(this).get(BuscadorActivityViewModel.class);
         //mv.getPersonasMutable().observe(this, new Observer<List<Persona>>() {
+
+        b.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        vm.getListaLibros().observe(this, lista -> {
+
+            LibroAdapter adapter = new LibroAdapter(lista, this, getLayoutInflater());
+            b.recyclerView.setAdapter(adapter);
+
+        });
 
         //Le ponemos un listener al boton buscar, que al presionarse ejecuta
         //en el viewmodel el metodo buscarLibro
