@@ -6,6 +6,7 @@
     android:layout_margin="6dp"
     app:cardCornerRadius="14dp"
     app:cardElevation="4dp"
+    app:cardBackgroundColor="#A0D99C"
     app:cardUseCompatPadding="true">
 
     <TextView
@@ -19,6 +20,7 @@
         android:text="Fantasía"
         android:textSize="14sp"
         android:textStyle="bold"
+        android:textColor="#000000"
         android:maxLines="3"
         android:ellipsize="end" />
 </androidx.cardview.widget.CardView>
