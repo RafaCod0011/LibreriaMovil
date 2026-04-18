@@ -28,24 +28,26 @@
 
         <TextView
             android:id="@+id/tv_titulo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Título del libro"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:paddingLeft="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.127"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/img_portada"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_autor"
-            android:layout_width="88dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Autor del libro"
             android:textSize="14sp"
+            android:paddingLeft="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.11"
             app:layout_constraintStart_toEndOf="@+id/img_portada"
@@ -53,11 +55,12 @@
 
         <TextView
             android:id="@+id/tv_info_extra"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="2020 - Editorial XYZ"
             android:textSize="12sp"
+            android:paddingLeft="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.12"
             app:layout_constraintStart_toEndOf="@+id/img_portada"
