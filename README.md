@@ -1,4 +1,4 @@
-Markdown# 📚 Trabajo Práctico 3 – Buscador de Libros
+# 📚 Trabajo Práctico 3 – Buscador de Libros
 
 Aplicación Android que permite buscar libros de una lista y ver sus detalles en una segunda Activity.
 
@@ -13,7 +13,7 @@ Desarrollar una aplicación con **dos Activities** aplicando el patrón **MVVM**
 ## 📌 Descripción
 
 La aplicación muestra una lista de libros usando **RecyclerView**.  
-El usuario puede buscar por título y al pulsar sobre un libro se abre una segunda Activity con todos sus detalles.
+El usuario puede buscar por título y al pulsar sobre el boton buscar se abre una segunda Activity con todos sus detalles.
 
 ---
 
@@ -22,7 +22,6 @@ El usuario puede buscar por título y al pulsar sobre un libro se abre una segun
 - ✅ Lista de 10 libros precargados
 - ✅ Búsqueda en tiempo real por título
 - ✅ RecyclerView con tarjetas (CardView)
-- ✅ Navegación a pantalla de detalle al hacer clic en un libro
 - ✅ Implementación completa con **MVVM** y **ViewBinding**
 
 ---
@@ -31,7 +30,7 @@ El usuario puede buscar por título y al pulsar sobre un libro se abre una segun
 
 - **Model**: Clase `Libro` y `LibroData` (lista de libros)
 - **ViewModel**: `MainViewModel` (carga y filtra la lista)
-- **View**: `MainActivity` y `DetalleActivity` (solo observan datos y manejan eventos)
+- **View**: `MainActivity` y `DetalleActivity` 
 
 ---
 
