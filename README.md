@@ -34,6 +34,33 @@ El usuario puede buscar por título y al pulsar sobre el boton buscar se abre un
 
 ---
 
+## 📂 Estructura del Proyecto
+El proyecto sigue una organización basada en paquetes para separar las responsabilidades de la arquitectura MVVM:
+
+- modelo/: Contiene la clase de datos Libro.
+
+- repositorio/: Clase LibroRepositorio encargada de gestionar el acceso a los datos (la lista de libros).
+
+**Views (Activities):**
+
+- BuscadorActivity: Pantalla principal de búsqueda.
+
+- DetalleActivity: Pantalla de detalles del libro seleccionado.
+
+**ViewModels:**
+
+- BuscadorActivityViewModel: Lógica y filtrado para el buscador.
+
+- DetalleActivityViewModel: Gestión de datos para la vista de detalle.
+
+**Adapters:**
+
+- LibroAdapter: Adaptador para la lista principal de libros.
+
+- GeneroAdapter: Adaptador para la lista de géneros dentro del detalle.
+
+- res/layout/: Archivos XML de diseño (activities e items de las listas).
+
 ## 🚀 Cómo ejecutar el proyecto
 
 1. Clonar el repositorio
