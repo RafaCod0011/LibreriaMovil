@@ -30,19 +30,26 @@ private ActivityBuscadorBinding b;
         setContentView(b.getRoot());
         //queda inicializado el viewmodel
         vm = new ViewModelProvider(this).get(BuscadorActivityViewModel.class);
-        //mv.getPersonasMutable().observe(this, new Observer<List<Persona>>() {
 
         b.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         vm.getListaLibros().observe(this, lista -> {
 
             LibroAdapter adapter = new LibroAdapter(lista, this, getLayoutInflater());
             b.recyclerView.setAdapter(adapter);
-
         });
 
+
+        vm.getTextoBuscador().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String nuevoTexto) {
+                // Cuando el LiveData cambia, el EditText se actualiza solo
+                b.etBuscar.setText(nuevoTexto);
+            }
+        });
+
+
+
         //Le ponemos un listener al boton buscar, que al presionarse ejecuta
-        //en el viewmodel el metodo buscarLibro
         b.btBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +57,7 @@ private ActivityBuscadorBinding b;
                 vm.buscarLibro(titulo);
             }
         });
+
 
         //Observamos el resultado del VM
         vm.getLibroBuscadoMutable().observe(this, new Observer<Libro>() {
@@ -66,4 +74,9 @@ private ActivityBuscadorBinding b;
                     }
                 });
     }
+
+    public void actualizarTexto(String titulo) {
+        vm.setTextoBuscador(titulo);
+    }
+
 }

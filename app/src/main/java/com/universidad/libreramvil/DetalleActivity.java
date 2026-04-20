@@ -30,8 +30,8 @@ public class DetalleActivity extends AppCompatActivity {
         setContentView(b.getRoot());
         vm= new ViewModelProvider(this).get(DetalleActivityViewModel.class);
 
-        //Creamos un grid de 2 columnas para organizar los generos.
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        //Creamos un grid de 3 columnas para organizar los generos.
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
         b.rvGeneros.setLayoutManager(layoutManager);
 
 

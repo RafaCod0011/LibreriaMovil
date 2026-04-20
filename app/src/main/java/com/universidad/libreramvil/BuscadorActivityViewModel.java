@@ -17,6 +17,7 @@ public class BuscadorActivityViewModel extends AndroidViewModel {
 
     private MutableLiveData<Libro> libroBuscadoMutable;
     private MutableLiveData<List<Libro>> listaLibrosMutable;
+    private MutableLiveData<String> textoBuscador = new MutableLiveData<>();
     private LibroRepositorio repositorio;
 
 
@@ -26,7 +27,6 @@ public class BuscadorActivityViewModel extends AndroidViewModel {
         repositorio = new LibroRepositorio();
         Log.d("LISTA", "Repositorio creado");
         libroBuscadoMutable = new MutableLiveData<>();
-
         listaLibrosMutable = new MutableLiveData<>();
         listaLibrosMutable.setValue(repositorio.obtenerLibros());
 
@@ -40,6 +40,10 @@ public class BuscadorActivityViewModel extends AndroidViewModel {
         return listaLibrosMutable;
     }
 
+    public LiveData<String> getTextoBuscador() {
+        return textoBuscador;
+    }
+
     public void buscarLibro(String titulo) {
         if (titulo != null && !titulo.trim().isEmpty()) {
             Libro resultado = repositorio.buscarPorTitulo(titulo);
@@ -47,6 +51,9 @@ public class BuscadorActivityViewModel extends AndroidViewModel {
         } else {
             libroBuscadoMutable.setValue(null);
         }
+    }
+    public void setTextoBuscador(String titulo) {
+        textoBuscador.setValue(titulo);
     }
 
 

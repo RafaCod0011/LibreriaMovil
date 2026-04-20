@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,7 +43,30 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.ViewHolderLi
         holder.binding.tvTitulo.setText(l.getTitulo());
         holder.binding.tvAutor.setText(l.getAutor());
         holder.binding.tvInfoExtra.setText(l.getAnioPublicacion() + " - " + l.getEditorial());
+
+
+        //Agregamos la funcionalidad de tomar el texto del item y pegarlo en el
+        //buscador, para esto tomamos el activity desde el contexto, y le pasa
+        //el titulo del libro..
+        //La Activity va a recibir el texto, pero lo va a pegar, sino que se lo pasa
+        //al view model, quien recibe el titulo, actualiza el liveData
+        //para que despues el observer del activity lo pegue
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.getContext() instanceof BuscadorActivity) {
+                    BuscadorActivity activity = (BuscadorActivity) v.getContext();
+                    activity.actualizarTexto(l.getTitulo());
+                }
+            }
+        });
+
     }
+
+
+
+
 
     @Override
     public int getItemCount() {
@@ -57,7 +81,11 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.ViewHolderLi
             super(binding.getRoot());
 
             this.binding = binding;
+
+
         }
+
+
     }
 
 
