@@ -26,14 +26,6 @@ El usuario puede buscar por título y al pulsar sobre el boton buscar se abre un
 
 ---
 
-## 🏗️ Implementación MVVM
-
-- **Model**: Clase `Libro` y `LibroData` (lista de libros)
-- **ViewModel**: `MainViewModel` (carga y filtra la lista)
-- **View**: `MainActivity` y `DetalleActivity` 
-
----
-
 ## 📂 Estructura del Proyecto
 El proyecto sigue una organización basada en paquetes para separar las responsabilidades de la arquitectura MVVM:
 

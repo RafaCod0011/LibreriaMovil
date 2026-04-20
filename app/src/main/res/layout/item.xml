@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="12dp"
-    app:cardElevation="6dp">
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="#F1F8E9">
 
     <!-- Este es el contenedor interno donde ponemos la foto y los textos -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,6 +35,7 @@
             android:text="Título del libro"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="#33691E"
             android:paddingLeft="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -45,6 +47,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:textColor="#33691E"
             android:text="Autor del libro"
             android:textSize="14sp"
             android:paddingLeft="10dp"
@@ -58,6 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:textColor="#33691E"
             android:text="2020 - Editorial XYZ"
             android:textSize="12sp"
             android:paddingLeft="10dp"
