@@ -19,10 +19,10 @@ El usuario puede buscar por título y al pulsar sobre el boton buscar se abre un
 
 ## ✨ Funcionalidades
 
-- ✅ Lista de 10 libros precargados
-- ✅ Búsqueda en tiempo real por título
-- ✅ RecyclerView con tarjetas (CardView)
-- ✅ Implementación completa con **MVVM** y **ViewBinding**
+- **Búsqueda principal:** Campo de texto  buscar libros por su título.
+- **Autocompletado:** Al hacer clic sobre un ítem (libro) de la lista, el buscador se carga automáticamente con el nombre seleccionado.
+- **Vista de Detalle:** Al accionar la búsqueda, se navega a una segunda Activity que expone la portada, sinopsis, autor, año, cantidad de páginas y géneros del libro.
+- **UI Moderna:** Implementación de `RecyclerView` (incluyendo `GridLayoutManager` para los géneros) y `CardView` personalizados.
 
 ---
 
