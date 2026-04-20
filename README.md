@@ -61,6 +61,8 @@ El proyecto sigue una organización basada en paquetes para separar las responsa
 
 - res/layout/: Archivos XML de diseño (activities e items de las listas).
 
+---
+
 ## 🚀 Cómo ejecutar el proyecto
 
 1. Clonar el repositorio
