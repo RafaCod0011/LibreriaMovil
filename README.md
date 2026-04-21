@@ -66,7 +66,7 @@ El proyecto sigue una organización basada en paquetes para separar las responsa
 
 ## 👥 Integrantes del grupo
 
-- Facundo Martín García – DNI: 28399283
+- Manuel Facundo Martín García – DNI: 28399283
 - Victor Angel Aguilera – DNI: 36220045
 - Rafael Nicolas Cuello – DNI: 39396258
 - Martin Nahuel Becerra – DNI: 47266622

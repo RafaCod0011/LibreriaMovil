@@ -51,7 +51,6 @@ public class DetalleActivity extends AppCompatActivity {
                 GeneroAdapter adapter = new GeneroAdapter(libro.getGeneros());
                 b.rvGeneros.setAdapter(adapter);
 
-                //cargarGeneros(libro.getGeneros());
             }
         });
 
@@ -60,19 +59,5 @@ public class DetalleActivity extends AppCompatActivity {
 
     }
 
-    // Esto se usa para mostrar los generos si es que usamos campos TextView
-    /*private void cargarGeneros(List<String> generos) {
-        b.tvGenero1.setText(getGenero(generos, 0));
-        b.tvGenero2.setText(getGenero(generos, 1));
-        b.tvGenero3.setText(getGenero(generos, 2));
-        b.tvGenero4.setText(getGenero(generos, 3));
-        b.tvGenero5.setText(getGenero(generos, 4));
-    }
 
-    private String getGenero(List<String> generos, int index) {
-        if (generos != null && index < generos.size()) {
-            return generos.get(index);
-        }
-        return "";
-    }*/
 }

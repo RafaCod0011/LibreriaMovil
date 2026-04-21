@@ -20,8 +20,15 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.ViewHolderLi
 
     private List<Libro> libros;
 
-    public LibroAdapter(List<Libro> libros, Context context, LayoutInflater li){
+    private OnItemClickListener listener;
+
+    // Contrato
+    public interface OnItemClickListener {
+        void onItemClick(String titulo);
+    }
+    public LibroAdapter(List<Libro> libros,OnItemClickListener listener){
         this.libros = libros;
+        this.listener = listener;
     }
 
     @NonNull
@@ -45,28 +52,14 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.ViewHolderLi
         holder.binding.tvInfoExtra.setText(l.getAnioPublicacion() + " - " + l.getEditorial());
 
 
-        //Agregamos la funcionalidad de tomar el texto del item y pegarlo en el
-        //buscador, para esto tomamos el activity desde el contexto, y le pasa
-        //el titulo del libro..
-        //La Activity va a recibir el texto, pero lo va a pegar, sino que se lo pasa
-        //al view model, quien recibe el titulo, actualiza el liveData
-        //para que despues el observer del activity lo pegue
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v.getContext() instanceof BuscadorActivity) {
-                    BuscadorActivity activity = (BuscadorActivity) v.getContext();
-                    activity.actualizarTexto(l.getTitulo());
-                }
+        // Aca hacemos uso del metodo de la interface
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(l.getTitulo());
             }
         });
 
     }
-
-
-
-
 
     @Override
     public int getItemCount() {

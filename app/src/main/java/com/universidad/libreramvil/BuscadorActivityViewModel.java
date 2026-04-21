@@ -31,7 +31,6 @@ public class BuscadorActivityViewModel extends AndroidViewModel {
         listaLibrosMutable.setValue(repositorio.obtenerLibros());
 
     }
-
     public LiveData<Libro>getLibroBuscadoMutable(){
         return libroBuscadoMutable;
     }
@@ -43,7 +42,6 @@ public class BuscadorActivityViewModel extends AndroidViewModel {
     public LiveData<String> getTextoBuscador() {
         return textoBuscador;
     }
-
     public void buscarLibro(String titulo) {
         if (titulo != null && !titulo.trim().isEmpty()) {
             Libro resultado = repositorio.buscarPorTitulo(titulo);
@@ -55,9 +53,4 @@ public class BuscadorActivityViewModel extends AndroidViewModel {
     public void setTextoBuscador(String titulo) {
         textoBuscador.setValue(titulo);
     }
-
-
-
-
-
 }
